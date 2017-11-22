@@ -1,0 +1,207 @@
+  --- Volume group ---
+  VG Name               vg130
+  System ID             
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  191
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                12
+  Open LV               12
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               1.14 TiB
+  PE Size               4.00 MiB
+  Total PE              299516
+  Alloc PE / Size       296192 / 1.13 TiB
+  Free  PE / Size       3324 / 12.98 GiB
+  VG UUID               LTUIVp-zr3J-sZJd-d2Oc-DoHh-9epS-IQAeY2
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol0
+  VG Name                vg130
+  LV UUID                cORdxK-HEdp-ccGD-sIjk-D2UP-1fEf-cnIADg
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               3
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:105
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol1
+  VG Name                vg130
+  LV UUID                vaBx3E-crsw-ysPC-bxH0-ghxj-s5Nh-rH9hHk
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               3
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:106
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol2
+  VG Name                vg130
+  LV UUID                gzqcea-2fs3-JSc1-OyOh-0wUY-6AHp-hNydSe
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               3
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:107
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol3
+  VG Name                vg130
+  LV UUID                jZ63Iy-W6Gq-l2ms-MJZF-fVch-RLRu-y0MnUI
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               3
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:108
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol4
+  VG Name                vg130
+  LV UUID                UHiEb8-YmcO-HjVC-mfX9-Zi2w-R1MG-yrTj0k
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               4
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:109
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol5
+  VG Name                vg130
+  LV UUID                nxdtLW-895B-hfKw-t6zh-l3f2-iXhX-AIycKn
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               3
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:110
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol6
+  VG Name                vg130
+  LV UUID                n5rgmc-Mxah-Gvh1-YOBW-FNpk-drMR-VkrOXN
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               3
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:111
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol7
+  VG Name                vg130
+  LV UUID                TqE2gQ-mxrq-ZnGJ-daPf-jZ3U-ko5n-7BxJXh
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                92.00 GiB
+  Current LE             23552
+  Segments               3
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:112
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol8
+  VG Name                vg130
+  LV UUID                kVsE4H-FZg5-EZTy-nTzI-eSKl-Dac9-ARYol9
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                3.00 GiB
+  Current LE             768
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:113
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol9
+  VG Name                vg130
+  LV UUID                bLwYne-mIuw-EwLY-LQ5s-jiQK-t7Y1-6QztgY
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                3.00 GiB
+  Current LE             768
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:114
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol10
+  VG Name                vg130
+  LV UUID                iY2V6f-Menv-5deA-8An3-s2wf-23bY-E6xUtb
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                201.00 GiB
+  Current LE             51456
+  Segments               2
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:115
+   
+  --- Logical volume ---
+  LV Name                /dev/vg130/lvol11
+  VG Name                vg130
+  LV UUID                rn4wAx-LcEu-zCXJ-D64b-QFmI-GLyI-GGNcrE
+  LV Write Access        read/write
+  LV Status              available
+  # open                 1
+  LV Size                214.00 GiB
+  Current LE             54784
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     1024
+  Block device           253:116
+   
+  --- Physical volumes ---
+  PV Name               /dev/mapper/hpprod_vg130_d001     
+  PV UUID               4IbN18-crcA-gGcO-Ugcb-i2Hi-MNCf-hbHpKx
+  PV Status             allocatable
+  Total PE / Free PE    299516 / 3324
+   

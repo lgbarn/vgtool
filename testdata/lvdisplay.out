@@ -1,0 +1,85 @@
+  --- Logical volume ---
+  LV Path                /dev/vg00/lvol0
+  LV Name                lvol0
+  VG Name                vg00
+  LV UUID                ttkeWI-AIgg-1CQY-RqH7-as5W-20OA-LN9Eo4
+  LV Write Access        read/write
+  LV Creation host, time localhost.localdomain, 2017-01-04 15:28:00 +0000
+  LV Status              available
+  # open                 0
+  LV Size                10.00 GiB
+  Current LE             2560
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:2
+   
+  --- Logical volume ---
+  LV Path                /dev/vg00/lvol1
+  LV Name                lvol1
+  VG Name                vg00
+  LV UUID                obdC3T-2knK-F6pq-Wd5I-3gdc-p6Qi-Js0qcN
+  LV Write Access        read/write
+  LV Creation host, time localhost.localdomain, 2017-01-04 15:28:01 +0000
+  LV Status              available
+  # open                 0
+  LV Size                10.00 GiB
+  Current LE             2560
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:3
+   
+  --- Logical volume ---
+  LV Path                /dev/vg00/lvol2
+  LV Name                lvol2
+  VG Name                vg00
+  LV UUID                g4w9kt-eb4m-3MlX-Zyed-NLxx-ikGu-bmtSmX
+  LV Write Access        read/write
+  LV Creation host, time localhost.localdomain, 2017-01-04 15:28:02 +0000
+  LV Status              available
+  # open                 0
+  LV Size                10.00 GiB
+  Current LE             2560
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:4
+   
+  --- Logical volume ---
+  LV Path                /dev/vg00/lvol3
+  LV Name                lvol3
+  VG Name                vg00
+  LV UUID                c7eNQ3-TXBw-kxSs-Uv3v-CvVy-f8eN-AH7k0Q
+  LV Write Access        read/write
+  LV Creation host, time localhost.localdomain, 2017-01-04 15:28:04 +0000
+  LV Status              available
+  # open                 0
+  LV Size                10.00 GiB
+  Current LE             2560
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:5
+   
+  --- Logical volume ---
+  LV Path                /dev/vg00/lvol4
+  LV Name                lvol4
+  VG Name                vg00
+  LV UUID                V2tmh7-QJwP-3mid-Ba1o-4yDg-4CP6-aBhgsO
+  LV Write Access        read/write
+  LV Creation host, time localhost.localdomain, 2017-01-04 15:28:05 +0000
+  LV Status              available
+  # open                 0
+  LV Size                10.00 GiB
+  Current LE             2560
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:6
+   
