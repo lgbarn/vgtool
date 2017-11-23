@@ -81,9 +81,6 @@ to quickly create a Cobra application.`,
 			currLvol.lvCreate()
 		}
 
-		//for _, currLvol := range lvols {
-		//	currLvol.lvExtend()
-		//}
 	},
 }
 

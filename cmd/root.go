@@ -15,13 +15,66 @@
 package cmd
 
 import (
+	"bufio"
 	"fmt"
 	"os"
+	"strings"
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
+
+var file string
+var targetvgPtr string
+var filePtr *string
+var lvextendPtr string
+var fileLine string
+
+type lvol struct {
+	lvPath     string
+	lvName     string
+	vgName     string
+	lvSize     string
+	lvSizeUnit string
+}
+type vg struct {
+	vgName     string
+	vgSize     float64
+	vgSizeUnit string
+	disks      []string
+}
+
+func (Lvol *lvol) lvExtend() {
+	fmt.Printf("lvextend -r -L %s -n %s\n", Lvol.lvSize, Lvol.lvName)
+}
+func (VG *vg) vgCreate() {
+	disk := strings.Join(VG.disks[:], " ")
+	fmt.Printf("vgcreate %s %s\n", VG.vgName, disk)
+}
+func (Lvol *lvol) lvCreate() {
+	fmt.Printf("lvcreate -L %s -n %s %s\n", Lvol.lvSize, Lvol.lvName, Lvol.vgName)
+}
+
+func ParseLines(filePath string, parse func(string) (string, bool)) ([]string, error) {
+	inputFile, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	defer inputFile.Close()
+
+	scanner := bufio.NewScanner(inputFile)
+	var results []string
+	for scanner.Scan() {
+		if output, add := parse(scanner.Text()); add {
+			results = append(results, output)
+		}
+	}
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+	return results, nil
+}
 
 var cfgFile string
 
@@ -49,7 +102,7 @@ func Execute() {
 	}
 }
 
-func init() { 
+func init() {
 	cobra.OnInitialize(initConfig)
 
 	// Here you will define your flags and configuration settings.
