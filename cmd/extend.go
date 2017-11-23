@@ -25,20 +25,10 @@ import (
 )
 
 var file string
-var filePtr *string
 var targetvgPtr string
+var filePtr *string
 var lvextendPtr string
 var fileLine string
-var vgName string
-var lvName string
-var lvPath string
-var lvSize string
-var lvols = make([]*lvol, 0, 50)
-var pvDisks = make([]string, 0, 50)
-var vgNameRE, _ = regexp.Compile(`VG Name\s+(\w+)`)
-var lvNameRE, _ = regexp.Compile(`LV Name\s+(.+)`)
-var lvSizeRE, _ = regexp.Compile(`LV Size\s+(.+)`)
-var pvNameRE, _ = regexp.Compile(`PV Name\s+(.+)`)
 
 type lvol struct {
 	lvPath     string
@@ -96,6 +86,17 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
+
+		var vgName string
+		var lvName string
+		var lvPath string
+		var lvSize string
+		var lvols = make([]*lvol, 0, 50)
+		var pvDisks = make([]string, 0, 50)
+		var vgNameRE, _ = regexp.Compile(`VG Name\s+(\w+)`)
+		var lvNameRE, _ = regexp.Compile(`LV Name\s+(.+)`)
+		var lvSizeRE, _ = regexp.Compile(`LV Size\s+(.+)`)
+		var pvNameRE, _ = regexp.Compile(`PV Name\s+(.+)`)
 
 		lines, err := ParseLines(file, func(s string) (string, bool) {
 			return s, true
