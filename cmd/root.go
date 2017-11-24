@@ -28,9 +28,6 @@ import (
 
 var file string
 var targetvgPtr string
-var filePtr *string
-var lvextendPtr string
-var fileLine string
 
 type lvol struct {
 	lvPath     string
