@@ -18,6 +18,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"regexp"
 	"strings"
 
 	homedir "github.com/mitchellh/go-homedir"
@@ -75,6 +76,45 @@ func ParseLines(filePath string, parse func(string) (string, bool)) ([]string, e
 		return nil, err
 	}
 	return results, nil
+}
+
+// MatchLines used to match lines in file and populate variables
+func matchLines(lines []string) (string, []lvol, []string) {
+
+	var vgName string
+	var lvName string
+	var lvPath string
+	var lvSize string
+	var lvols []lvol
+	var pvDisks = make([]string, 0, 50)
+	var vgNameRE, _ = regexp.Compile(`VG Name\s+(\w+)`)
+	var lvNameRE, _ = regexp.Compile(`LV Name\s+(.+)`)
+	var lvSizeRE, _ = regexp.Compile(`LV Size\s+(.+)`)
+	var pvNameRE, _ = regexp.Compile(`PV Name\s+(.+)`)
+
+	for _, fileLine := range lines {
+		//fmt.Println(fileLine)
+		switch {
+		case vgNameRE.MatchString(fileLine):
+			vgName = vgNameRE.FindStringSubmatch(fileLine)[1]
+		case lvNameRE.MatchString(fileLine):
+			lvName = lvNameRE.FindStringSubmatch(fileLine)[1]
+		case lvSizeRE.MatchString(fileLine):
+			lvSize = lvSizeRE.FindStringSubmatch(fileLine)[1]
+			cleanlvSize := strings.Replace(lvSize, " ", "", -1)
+			if targetvgPtr != "" {
+				lvPath = strings.Replace(lvPath, vgName, targetvgPtr, -1)
+				vgName = targetvgPtr
+			}
+			newlvol := lvol{lvName: lvName, vgName: vgName, lvPath: lvPath, lvSize: cleanlvSize}
+			lvols = append(lvols, newlvol)
+		case pvNameRE.MatchString(fileLine):
+			pvName := pvNameRE.FindStringSubmatch(fileLine)[1]
+			cleanDisk := strings.TrimSpace(pvName)
+			pvDisks = append(pvDisks, cleanDisk)
+		}
+	}
+	return vgName, lvols, pvDisks
 }
 
 var cfgFile string
