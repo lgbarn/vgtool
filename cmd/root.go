@@ -56,6 +56,7 @@ func (Lvol *lvol) lvCreate() {
 	fmt.Printf("lvcreate -L %s -n %s %s\n", Lvol.lvSize, Lvol.lvName, Lvol.vgName)
 }
 
+// ParseLines is used by multiple commands to parse files to lines of data
 func ParseLines(filePath string, parse func(string) (string, bool)) ([]string, error) {
 	inputFile, err := os.Open(filePath)
 	if err != nil {
