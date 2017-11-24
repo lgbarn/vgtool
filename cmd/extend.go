@@ -32,7 +32,7 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
-		lines, err := ParseLines(file, func(s string) (string, bool) {
+		lines, err := ParseLines(vgFile.file, func(s string) (string, bool) {
 			return s, true
 		})
 		if err != nil {
@@ -67,6 +67,6 @@ func init() {
 	//flag.StringVarP(&target, "target", "", target,
 	//	"target")
 
-	extendCmd.Flags().StringVarP(&file, "file", "f", "", "Help message for toggle")
-	extendCmd.Flags().StringVarP(&targetvgPtr, "target", "t", "", "Help message for toggle")
+	extendCmd.Flags().StringVarP(&vgFile.file, "file", "f", "", "Help message for toggle")
+	extendCmd.Flags().StringVarP(&vgFile.targetvgPtr, "target", "t", "", "Help message for toggle")
 }

@@ -26,8 +26,10 @@ import (
 	"github.com/spf13/viper"
 )
 
-var file string
-var targetvgPtr string
+var vgFile struct {
+	file        string
+	targetvgPtr string
+}
 
 type lvol struct {
 	lvPath     string
@@ -99,9 +101,9 @@ func matchLines(lines []string) (string, []lvol, []string) {
 		case lvSizeRE.MatchString(fileLine):
 			lvSize = lvSizeRE.FindStringSubmatch(fileLine)[1]
 			cleanlvSize := strings.Replace(lvSize, " ", "", -1)
-			if targetvgPtr != "" {
-				lvPath = strings.Replace(lvPath, vgName, targetvgPtr, -1)
-				vgName = targetvgPtr
+			if vgFile.targetvgPtr != "" {
+				lvPath = strings.Replace(lvPath, vgName, vgFile.targetvgPtr, -1)
+				vgName = vgFile.targetvgPtr
 			}
 			newlvol := lvol{lvName: lvName, vgName: vgName, lvPath: lvPath, lvSize: cleanlvSize}
 			lvols = append(lvols, newlvol)
