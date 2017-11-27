@@ -42,8 +42,8 @@ to quickly create a Cobra application.`,
 
 		_, lvols, _ := matchLines(lines)
 
-		for _, currLvol := range lvols {
-			currLvol.lvExtend()
+		for _, lv := range lvols {
+			lv.Extend()
 		}
 
 	},

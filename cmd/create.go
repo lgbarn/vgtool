@@ -42,10 +42,10 @@ to quickly create a Cobra application.`,
 
 		vgName, lvols, pvDisks := matchLines(lines)
 
-		newvg := &vg{vgName: vgName, disks: pvDisks}
-		newvg.vgCreate()
-		for _, currLvol := range lvols {
-			currLvol.lvCreate()
+		vg := &vg{vgName: vgName, disks: pvDisks}
+		vg.Create()
+		for _, lv := range lvols {
+			lv.Create()
 		}
 
 	},

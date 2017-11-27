@@ -45,14 +45,24 @@ type vg struct {
 	disks      []string
 }
 
-func (Lvol *lvol) lvExtend() {
+// Creater interface used to create Lvols and VGs
+type Creater interface {
+	Create()
+}
+
+// Extender interface used to  Lextendvols and VGs
+type Extender interface {
+	Extend()
+}
+
+func (Lvol *lvol) Extend() {
 	fmt.Printf("lvextend -r -L %s -n %s\n", Lvol.lvSize, Lvol.lvName)
 }
-func (VG *vg) vgCreate() {
+func (VG *vg) Create() {
 	disk := strings.Join(VG.disks[:], " ")
 	fmt.Printf("vgcreate %s %s\n", VG.vgName, disk)
 }
-func (Lvol *lvol) lvCreate() {
+func (Lvol *lvol) Create() {
 	fmt.Printf("lvcreate -L %s -n %s %s\n", Lvol.lvSize, Lvol.lvName, Lvol.vgName)
 }
 
